@@ -1,4 +1,19 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const ToDoHeading = styled.h3`
+    font-family: 'Roboto', sans-serif; 
+    font-size: 1.4rem;
+`;
+
+const AddButton = styled.button`
+    border: 2px solid #4B0082;
+    border-radius: 5px;
+    background-color: #D8BFD8;
+    font-family: 'Roboto', sans-serif;
+    color: #4B0082;
+    margin-left: 1%;
+`
 
 class TodoForm extends React.Component {
     constructor() {
@@ -23,8 +38,8 @@ class TodoForm extends React.Component {
 
     render() {
         return (
-            <div>
-                <h3>To Do List:</h3>
+            <div className="todo-form">
+                <ToDoHeading>To Do List:</ToDoHeading>
                 <form onSubmit={this.onSubmit}>
                     <input
                     type='text'
@@ -32,7 +47,7 @@ class TodoForm extends React.Component {
                     value={this.state.name}
                     onChange={this.handleChange}
                     />
-                    <button>Add Todo</button>
+                    <AddButton className="add-btn">Add Task</AddButton>
                 </form>
             </div>
         )
