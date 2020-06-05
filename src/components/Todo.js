@@ -5,6 +5,7 @@ const StyledP = styled.p`
     font-family: 'Architects Daughter', cursive;
     color: white;
     font-size: 1rem;
+    
 `
 
 const Todo = props => {

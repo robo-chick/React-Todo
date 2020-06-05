@@ -2,22 +2,26 @@ import React from 'react';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 import styled from 'styled-components';
-import Todo from './components/Todo.css';
+
+
 
 const Container = styled.div`
   text-align: center;
   padding: 0 36px;
-  max-width: 665px;
+  max-width: 765px;
   margin: 0 auto;
 `;
 
 const Header = styled.div`
-  padding: 2%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 `;
 
 const Heading = styled.h2`
   font-family: 'Roboto', sans-serif;
   font-size: 2rem;
+  text-align: left;
 `;
 
 
@@ -78,10 +82,9 @@ class App extends React.Component {
 
   clearCompleted = e => {
     e.preventDefault();
-
+    const todos = this.state.todos.filter(todo => !todo.completed)
     this.setState({
-      todos: [this.state.todos.filter(todo => !todo.completed)]
-    })
+      todos })
   };
 
   render() {
@@ -90,14 +93,12 @@ class App extends React.Component {
         <Header>
         <Heading>Stuff I Should Probably Do!</Heading>
         </Header>  
-        <div id='todo'>
           <TodoForm 
-            addTodo={this.addTodo} clearCompleted={this.clearCompleted} />
+            addTodo={this.addTodo} />
           <TodoList
             toggleComplete={this.toggleComplete}
             todos={this.state.todos}
             clearCompleted={this.clearCompleted} />
-        </div>  
       </Container>
     );
   }
