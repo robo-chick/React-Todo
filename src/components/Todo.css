@@ -1,0 +1,19 @@
+body {
+    background-color: #A9A9A9;
+}
+
+.todo {
+    width: 15%;
+    background-color: #4B0082;
+    text-align: center;
+    margin: 4px 0;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.todo.completed {
+    background-color: #9370DB;
+    text-decoration: line-through;
+    color: white;
+}
+
